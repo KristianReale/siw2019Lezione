@@ -23,7 +23,8 @@ class StudenteDaoJDBC implements StudenteDao {
 	public void save(Studente studente) {
 		Connection connection = this.dataSource.getConnection();
 		try {
-			String insert = "insert into studente(matricola, nome, cognome, data_nascita, scuola_id) values (?,?,?,?,?)";
+			String insert = "insert into studente(matricola, nome, cognome,"
+					+ " data_nascita, scuola_id) values (?,?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setString(1, studente.getMatricola());
 			statement.setString(2, studente.getNome());
@@ -61,8 +62,8 @@ class StudenteDaoJDBC implements StudenteDao {
 				studente.setDataNascita(new java.util.Date(secs));
 				
 				ScuolaDao scuolaDao = new ScuolaDaoJDBC(dataSource);
-				Scuola codiceScuola = scuolaDao.findByPrimaryKey(result.getLong("scuola_id"));
-				studente.setScuolaDiDiploma(codiceScuola);
+				Scuola scuola = scuolaDao.findByPrimaryKey(result.getLong("scuola_id"));
+				studente.setScuolaDiDiploma(scuola);
 			}
 		} catch (SQLException e) {
 			throw new PersistenceException(e.getMessage());

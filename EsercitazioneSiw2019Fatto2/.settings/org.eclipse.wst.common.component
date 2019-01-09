@@ -4,6 +4,6 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/newTest"/>
         <property name="java-output-path" value="/EsercitazioneSiw2019Fatto/build/classes"/>
-        <property name="context-root" value="EsercitazioneSiw2019Fatto"/>
+        <property name="context-root" value="EsercitazioneSiw2019Fatto2"/>
     </wb-module>
 </project-modules>

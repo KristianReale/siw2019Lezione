@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" 
+prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,13 +19,6 @@
 <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-
-<script language="javascript">
-	function filtraStudenti(){
-		var cognome = prompt("Inserisci un cognome per il filtro");
-		window.location.href = "ottieniStudenti?filtraCognome=" + cognome;
-	}
-</script>
 <!-- 
 <link rel="stylesheet" href="css/common.css" type="text/css" />
  -->
@@ -43,6 +40,15 @@
 			<a href="http://www.unical.it">
 				<img src="images/logo_unical.png" width="300"/>
 			</a>
+			<h2>			
+				<c:if test="${username != null}">
+					<p>Sei loggato come ${username}</p>
+					<a href="doLogin?logout=true">Logout</a>
+				</c:if>
+				<c:if test="${username == null}">
+					<a href="doLogin">Login</a>
+				</c:if>				
+			</h2>
 		</figure>
 	</aside>
 </header>
@@ -55,9 +61,8 @@
 			<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Studenti</a>
 			<ul class="dropdown-menu">
 				<li><a class="dropdown-item" href="ottieniStudenti">Elenco Studenti</a></li>
-				<li><a class="dropdown-item" href="#" onclick="filtraStudenti();">Elenco Studenti Filtro</a></li>
 				<li>Studenti di un certo corso</li>
-				<li><a  class="dropdown-item" href="gestioneStudenti/iscriviStudenti.html">Iscrivi uno studente</a></li>
+				<li><a  class="dropdown-item" href="gestioneStudenti/iscriviStudenti">Iscrivi uno studente</a></li>
 				<li><a  class="dropdown-item" href="servizi/isee.html">Calcola ISEE</a></li>
 			</ul>
 		</li>

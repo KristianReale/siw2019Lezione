@@ -25,7 +25,7 @@ class PostgresDAOFactory extends DAOFactory {
 			dataSource=new DataSource("jdbc:postgresql://localhost:5432/Segreteria2019","postgres","postgres");
 		} 
 		catch (Exception e) {
-			System.err.println("PostgresDAOFactory.class: failed to load Postgres JDBC driver\n"+e);
+			System.err.println("PostgresDAOFactory.class: failed to load MySQL JDBC driver\n"+e);
 			e.printStackTrace();
 		}
 	}
