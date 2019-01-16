@@ -27,8 +27,7 @@ function caricaDettagliScuola(studente){
 	var studente = {
 			matricola : studente.matricola,
 			nome : studente.nome,
-			cognome : studente.cognome,
-			dataNascita : studente.dataNascita				
+			cognome : studente.cognome,						
 		};	
 	$.ajax({
 		type: "POST",		
