@@ -99,6 +99,18 @@ public class CorsoDiLaureaDaoJDBC implements CorsoDiLaureaDao {
 		}	
 	}
 	
+	@Override
+	public List<CorsoDiLaurea> findByDipartimento(Dipartimento dipartimento) {
+		List<CorsoDiLaurea> toReturn = new ArrayList<CorsoDiLaurea>();
+		for (CorsoDiLaurea l : findAll()) {
+			if (l.getDipartimento().getCodice() == dipartimento.getCodice()) {
+				toReturn.add(l);
+			}
+		}
+		
+		return toReturn;
+	}
+	
 	/* 
 	 * versione con Join
 	 */

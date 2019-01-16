@@ -60,5 +60,24 @@
     <url-pattern></url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>DammiICorsi</servlet-name>
+    <servlet-class>controller.FormIscrizioneFiller</servlet-class>
+  </servlet>  
+  <servlet-mapping>
+    <servlet-name>DammiICorsi</servlet-name>
+    <url-pattern>/gestioneStudenti/dammiCorsiDiLaurea</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>scuolaStud</servlet-name>
+    <servlet-class>controller.ScuolaStudente</servlet-class>
+  </servlet>  
+  <servlet-mapping>
+    <servlet-name>scuolaStud</servlet-name>
+    <url-pattern>/dettagliScuola</url-pattern>
+  </servlet-mapping>
+  
+ 
    
 </web-app>

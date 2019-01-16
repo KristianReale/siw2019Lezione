@@ -6,6 +6,8 @@
 
 <link rel="stylesheet" href="../css/common.css" type="text/css" />
 
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/formFiller.js"></script>
 </head>
 <body>
 	<header>
@@ -44,7 +46,12 @@
 		<td>
 			Rossi
 		</td>
+		<td>
+			<input value="Scuola" type="button" onclick="stud = new Studente('4', 'Kristian', 'Reale'); caricaDettagliScuola(stud);">
+		</td>
 	</tr>
+	Dettagli Scuola
+	<div id="dettagliScuola" />			
 </table>
 </body>
 </html>

@@ -12,6 +12,8 @@ public interface CorsoDiLaureaDao {
 	
 	public CorsoDiLaurea findByPrimaryKeyJoin(Long id);
 	
+	public List<CorsoDiLaurea> findByDipartimento(Dipartimento dipartimento);
+	
 	public void update(CorsoDiLaurea corsoDiLaurea); //Update
 	public void delete(CorsoDiLaurea corsoDiLaurea); //Delete	
 }

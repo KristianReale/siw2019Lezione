@@ -14,9 +14,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Dipartimento;
 import model.Scuola;
 import model.Studente;
 import persistence.DAOFactory;
+import persistence.dao.DipartimentoDao;
 import persistence.dao.ScuolaDao;
 import persistence.dao.StudenteDao;
 
@@ -64,6 +66,10 @@ public class IscriviStudente extends HttpServlet{
 		ScuolaDao sDao = DAOFactory.getDAOFactory(DAOFactory.POSTGRESQL).getScuolaDAO();
 		List<Scuola> scuole = sDao.findAll();
 		req.setAttribute("scuole", scuole);
+		
+		DipartimentoDao dDao = DAOFactory.getDAOFactory(DAOFactory.POSTGRESQL).getDipartimentoDAO();
+		List<Dipartimento> dipartimenti = dDao.findAll();
+		req.setAttribute("dipartimenti", dipartimenti);
 		
 		RequestDispatcher rd = req.getRequestDispatcher("iscriviStudenti.jsp");
 		rd.forward(req, resp);
